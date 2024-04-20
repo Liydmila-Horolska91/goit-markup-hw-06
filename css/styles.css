@@ -2,8 +2,6 @@ body {
     font-family: "Roboto", sans-serif;
     color: #434455;
     background-color: #fff;
-    width: 100%;
-    margin: 0;
 }
 
 a {
@@ -23,6 +21,7 @@ ol {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
 }
 
 img {
@@ -30,24 +29,48 @@ img {
     max-width: 100%;
 }
 
-/*header*/
 
 .container {
-    width: 1158px;
-    padding: 0 15px;
+    max-width: 320px;
+    padding: 0 16px;
     margin: 0 auto;
 }
 
+.section {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media screen and (min-width: 1158px) {
+    .container {
+        max-width: 1158px;
+        padding: 0 15px;
+    }
+
+}
+
+/*header*/
+
 .header {
     border-bottom: 1px solid #E7E9FC;
-    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+   /* box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
         0px 1px 1px rgba(46, 47, 66, 0.16),
         0px 1px 6px rgba(46, 47, 66, 0.08);
-}
+padding-top: 16px;
+    padding-bottom: 16px;
+    min-width: 320px;*/
+    }
 
 .header-container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .navigation {
@@ -63,7 +86,7 @@ img {
     line-height: 1.17;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    margin-right: 76px;
+    padding: 17px 0;
 }
 
 .logo-part {
@@ -71,11 +94,11 @@ img {
 }
 
 .nav-list {
-    display: flex;
-    gap: 40px;
+    display: none;
+
 }
 
-.nav-link {
+/*.nav-link {
     color: #2e2f42;
     font-size: 16px;
     font-weight: 500;
@@ -106,20 +129,81 @@ width: 100%;
 .nav-link:hover,
 .nav-link:focus {
     color: #404bbf;
-}
+}*/
 
 .address {
     font-style: normal;
     margin-left: auto;
+    display: none;
 }
 
-.address-list {
-    display: flex;
-    gap: 40px;
+
+.open-menu-btn{
+    padding: 0;
+    line-height: 0;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
 }
+@media screen and (min-width: 768px) {
+
+    .open-menu-btn{
+        display: none;
+        }
+
+    .logo{
+        margin-right: 120px;
+    }
+    
+    .nav-list {
+        display: flex;
+        gap: 40px;
+        }
+    .nav-link {
+            color: #2e2f42;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5;
+            letter-spacing: 0.02em;
+            padding: 24px 0;
+            display: block;
+            transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-link:hover,
+        .nav-link:focus {
+            color: #404bbf;
+        }
+    
+    .current {
+            position: relative;
+            color: #404bbf;
+    
+        }
+    
+    .current::after {
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            content: "";
+            background-color: #404bbf;
+            border-radius: 2px;
+            height: 4px;
+            width: 100%;
+    }
+
+    .address {
+    display: block;
+    }
+
+  .address-list{
+    display: flex;
+    flex-direction: column;
+    gap: 12;
+  }
 
 .address-link {
-color: #434455;
+    color: #434455;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
@@ -130,6 +214,27 @@ color: #434455;
 .address-link:focus {
     color: #404bbf;
 }
+    
+}
+
+@media screen and (min-width: 1158px) {
+.logo {
+        margin-right: 76px;
+    }
+
+    .address-list {
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    .address-link {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+}
+
+
 
 /*main*/
 .section-title {
@@ -137,11 +242,27 @@ color: #434455;
         background-size: cover;
         text-align: center;
         padding: 188px 0;
-        max-width: 1440px;
+        padding-top: 72px;
+        padding-bottom: 72px;
+        max-width: 320px;
         background-repeat: no-repeat;
         background-position: center;
         margin: 0 auto;
         box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+@media screen and (min-width: 320px) {
+    .section-title {
+        background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office-mob-1x.jpg);
+    }
+
+    @media screen and (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 2dppx),
+    (min-resolution: 192dpi) {
+        .section-title {
+            background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office-mob-2x.jpg);
+        }
+    }
 }
 
 .main-logo {
@@ -150,21 +271,18 @@ color: #434455;
     text-align: center;
     font-size: 56px;
     font-weight: 700;
-    line-height: 1.07;
+    line-height: 1.11;
     letter-spacing: 0.02em;
-    max-width: 496px;
+    max-width: 216px;
     width: 100%;
-    margin: 0 auto;
-    margin-bottom: 48px;
+    margin: auto;
+    margin-bottom: 72px;
+    font-size: 36px
 }
 
 .main-button {
     display: block;
-        margin: 0 auto;
-        align-items: flex-start;
-        justify-content: flex-start;
-        flex-direction: row;
-        gap: 10px;
+        margin: auto;
         background-color: #4d5ae5;
         font-weight: 500;
         font-size: 16px;
@@ -172,11 +290,12 @@ color: #434455;
         letter-spacing: 0.04em;
         color: #fff;
         min-width: 169px;
-        height: 56px;
+        padding: 16px 32px;
         border: none;
         border-radius: 4px;
         font-family: "Roboto", sans-serif;
         cursor: pointer;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
         transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -184,6 +303,85 @@ color: #434455;
 .main-button:focus {
     background-color: #404BBF;
 }
+
+@media (min-width: 768px) {
+    .section-title {
+            background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office.jpg);
+            background-size: cover;
+            text-align: center;
+            padding: 188px 0;
+            padding-top: 72px;
+            padding-bottom: 72px;
+            max-width: 768px;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0 auto;
+            box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+        }
+/*@media screen and (min-width: 768px) {
+        .section-title {
+            background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office-tab-1x.jpg);
+        }
+
+        @media screen and (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 2dppx),
+        (min-resolution: 192dpi) {
+            .section-title {
+                background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office-tab-2x.jpg);
+            }
+        }
+    }*/
+
+        .main-logo {
+    
+            color: #fff;
+            text-align: center;
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.07;
+            letter-spacing: 0.02em;
+            max-width: 496px;
+            width: 100%;
+            margin: auto;
+            margin-bottom: 112px;
+        }
+    
+        .main-button {
+            display: block;
+            margin: auto;
+            background-color: #4d5ae5;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.04em;
+            color: #fff;
+            min-width: 169px;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 4px;
+            font-family: "Roboto", sans-serif;
+            cursor: pointer;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+            transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    
+        .main-button:hover,
+        .main-button:focus {
+            background-color: #404BBF;
+        }
+}
+
+@media (min-width: 1158px) {
+        @media screen and (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 2dppx),
+        (min-resolution: 192dpi) {
+            .section-title {
+                background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office-dusctop-2x.jpg);
+            }
+        }
+    }
+
+
 
 /* advantages */
 

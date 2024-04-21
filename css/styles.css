@@ -14,14 +14,15 @@ h2,
 h3,
 p {
     margin: 0;
+    margin-bottom: 0;
 }
 
 ul,
 ol {
     list-style: none;
-    padding: 0;
+    padding-left: 0;
     margin: 0;
-    display: flex;
+    
 }
 
 img {
@@ -59,18 +60,18 @@ img {
 
 .header {
     border-bottom: 1px solid #E7E9FC;
-   /* box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
         0px 1px 1px rgba(46, 47, 66, 0.16),
         0px 1px 6px rgba(46, 47, 66, 0.08);
 padding-top: 16px;
     padding-bottom: 16px;
-    min-width: 320px;*/
+    min-width: 320px;
     }
 
 .header-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
 }
 
 .navigation {
@@ -91,45 +92,38 @@ padding-top: 16px;
 
 .logo-part {
     color: #2e2f42;
+    position: relative;
 }
 
 .nav-list {
     display: none;
-
+        gap: 40px;
 }
 
-/*.nav-link {
+.nav-list:last-child {
+    margin-right: 0;
+}
+
+.nav-link {
     color: #2e2f42;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.02em;
     padding: 24px 0;
-    display: block;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .current{
 position: relative;
 color: #404bbf;
-    
 }
 
-.current::after{
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-content:"" ;
-background: #404bbf;
-border-radius: 2px;
-height: 4px;
-width: 100%;
-}
 
 .nav-link:hover,
 .nav-link:focus {
     color: #404bbf;
-}*/
+}
 
 .address {
     font-style: normal;
@@ -137,14 +131,145 @@ width: 100%;
     display: none;
 }
 
+  .address-list {
+    display: flex;
+        gap: 40px;
+        align-items: center;
+  }
+
+  .address-link{
+    display: flex;
+  }
+
+.address-link {
+    color: #434455;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.address-link:hover,
+.address-link:focus {
+    color: #404bbf;
+}
 
 .open-menu-btn{
-    padding: 0;
-    line-height: 0;
-    background-color: transparent;
+display: block;
+    margin-left: auto;
+    border: none;
+    background-color: #fff;
     cursor: pointer;
+}
+
+/*----mob menu--------*/
+
+.mob-menu {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: #fff;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-left: 16px;
+    padding-right: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+    opacity: 0;
+    visibility: hidden;
+   }
+
+.mob-modal-close-btn {
+    display: flex;
+    margin-left: auto;
+    margin-bottom: 24px;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background-color: #e7e9fc;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    width: 24px;
+    height: 24px;
+}
+
+.mob-modal-close-icon {}
+
+.mob-modal-close-btn:hover,
+.mob-modal-close-btn:focus {
+    background-color: #404BBF;
     border: none;
 }
+
+.mob-modal-close-icon {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mob-modal-close-btn:hover>.mob-modal-close-icon,
+.mob-modal-close-btn:focus>.mob-modal-close-icon {
+    fill: #ffff;
+}
+
+
+.mob-nav-link-li:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+.mob-nav-link {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+}
+
+.current {
+    color: #404bbf;
+    margin-top: 24px;
+}
+
+
+.mob-address {
+    margin-bottom: 48px;
+    margin-top: 168px;
+    font-style: normal;
+}
+
+.mob-li-address-link {
+    margin-bottom: 24px;
+}
+
+.mob-address-link-mailto {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #434455;
+}
+
+.mob-address-link-tel {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #4d5ae5;
+}
+
+.mob-icon-list-team {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+}
+
+/*header*/
+
 @media screen and (min-width: 768px) {
 
     .open-menu-btn{
@@ -159,6 +284,7 @@ width: 100%;
         display: flex;
         gap: 40px;
         }
+
     .nav-link {
             color: #2e2f42;
             font-size: 16px;
@@ -178,18 +304,18 @@ width: 100%;
     .current {
             position: relative;
             color: #404bbf;
-    
-        }
+            }
     
     .current::after {
-            position: absolute;
-            left: 0;
-            bottom: -1px;
-            content: "";
-            background-color: #404bbf;
-            border-radius: 2px;
-            height: 4px;
-            width: 100%;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #404bbf;
     }
 
     .address {
@@ -235,33 +361,27 @@ width: 100%;
 }
 
 
-
 /*main*/
 .section-title {
-    background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office.jpg);
-        background-size: cover;
-        text-align: center;
-        padding: 188px 0;
-        padding-top: 72px;
-        padding-bottom: 72px;
-        max-width: 320px;
-        background-repeat: no-repeat;
-        background-position: center;
-        margin: 0 auto;
-        box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+padding: 72px 0;
+    background: #2e2f42;
+    max-width: 320px;
+    margin: 0 auto;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+            rgba(46, 47, 66, 0.7)),
+        url(../images/people-office-mob-1x.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-@media screen and (min-width: 320px) {
-    .section-title {
-        background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office-mob-1x.jpg);
-    }
 
-    @media screen and (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 2dppx),
-    (min-resolution: 192dpi) {
-        .section-title {
-            background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office-mob-2x.jpg);
-        }
+@media screen and (min-resolution: 2dppx),
+(min-resolution:192dpi),
+(-webkit-min-device-pixel-ratio:2) {
+    .service {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+                rgba(46, 47, 66, 0.7)), url(../images/people-office-mob-2x.jpg);
     }
 }
 
@@ -269,34 +389,35 @@ width: 100%;
    
     color: #fff;
     text-align: center;
-    font-size: 56px;
+    font-size: 36px;
     font-weight: 700;
     line-height: 1.11;
     letter-spacing: 0.02em;
     max-width: 216px;
     width: 100%;
-    margin: auto;
+    margin: 0 auto;
     margin-bottom: 72px;
-    font-size: 36px
 }
 
 .main-button {
-    display: block;
-        margin: auto;
-        background-color: #4d5ae5;
+    background: #4d5ae5;
+        cursor: pointer;
         font-weight: 500;
-        font-size: 16px;
         line-height: 1.5;
         letter-spacing: 0.04em;
-        color: #fff;
-        min-width: 169px;
-        padding: 16px 32px;
+        color: #ffffff;
         border: none;
         border-radius: 4px;
-        font-family: "Roboto", sans-serif;
-        cursor: pointer;
-        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+        padding: 16px 30px 26px 32px;
+        height: 56px;
+        min-width: 169px;
         transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.main-button {
+    margin: 0 auto;
+    display: block;
+    margin-top: 43px;
 }
 
 .main-button:hover,
@@ -304,37 +425,100 @@ width: 100%;
     background-color: #404BBF;
 }
 
+/*tab*/
+
 @media (min-width: 768px) {
+
+    .section-title{
+padding: 112px 0;
+    max-width: 768px;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+            rgba(46, 47, 66, 0.7)),
+        url(../images/people-office-tab-1x.jpg);
+}
+
+@media screen and (min-resolution: 2dppx),
+(min-resolution:192dpi),
+(-webkit-min-device-pixel-ratio:2) {
+
+    .service {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+                rgba(46, 47, 66, 0.7)),
+            url(../images/people-office-tab-2x.jpg);
+    }
+}
     .section-title {
-            background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office.jpg);
-            background-size: cover;
-            text-align: center;
-            padding: 188px 0;
-            padding-top: 72px;
-            padding-bottom: 72px;
-            max-width: 768px;
-            background-repeat: no-repeat;
-            background-position: center;
-            margin: 0 auto;
-            box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
-        }
-/*@media screen and (min-width: 768px) {
-        .section-title {
-            background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office-tab-1x.jpg);
-        }
+    max-width: 496px;
+    line-height: 1.07;
+    font-size: 56px;
+    margin-bottom: 36px;
+    }
 
-        @media screen and (-webkit-min-device-pixel-ratio: 2),
-        (min-resolution: 2dppx),
-        (min-resolution: 192dpi) {
-            .section-title {
-                background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office-tab-2x.jpg);
-            }
+    .main-logo {
+    color: #fff;
+    text-align: center;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.07;
+    letter-spacing: 0.02em;
+    max-width: 496px;
+    width: 100%;
+    margin: 0 auto;
         }
-    }*/
-
-        .main-logo {
     
-            color: #fff;
+        .main-button {
+            background: #4d5ae5;
+            cursor: pointer;
+            font-weight: 500;
+            line-height: 1.5;
+            font-size: 16px;
+            letter-spacing: 0.04em;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 16px 32px;
+            height: 56px;
+            min-width: 169px;
+            transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    
+        .main-button {
+            margin: 0 auto;
+            display: block;
+        }
+    
+        .main-button:hover,
+        .main-button:focus {
+            background-color: #404BBF;
+        }
+    }
+
+    /*DESKTOP*/
+
+@media (min-width: 1158px) {
+        .section-title {
+    max-width: 1440px;
+        padding: 188px 0;
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+                rgba(46, 47, 66, 0.7)),
+            url(../images/people-office.jpg);
+    }
+    
+    @media screen and (min-resolution: 2dppx),
+    (min-resolution:192dpi),
+    (-webkit-min-device-pixel-ratio:2) {
+    
+        .section-title {
+            background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+                    rgba(46, 47, 66, 0.7)),
+                url(../images/people-office-dusctop-2x.jpg);
+        }
+    }
+
+        .section-title{
+        margin-bottom: 48px;
+        }
+        .main-logo {
             text-align: center;
             font-size: 56px;
             font-weight: 700;
@@ -342,80 +526,76 @@ width: 100%;
             letter-spacing: 0.02em;
             max-width: 496px;
             width: 100%;
-            margin: auto;
-            margin-bottom: 112px;
+            margin: 0 auto;
         }
-    
+        
         .main-button {
-            display: block;
-            margin: auto;
-            background-color: #4d5ae5;
+            background: #4d5ae5;
+            cursor: pointer;
             font-weight: 500;
-            font-size: 16px;
             line-height: 1.5;
+            font-size: 16px;
             letter-spacing: 0.04em;
-            color: #fff;
-            min-width: 169px;
-            padding: 16px 32px;
+            color: #ffffff;
             border: none;
             border-radius: 4px;
-            font-family: "Roboto", sans-serif;
-            cursor: pointer;
-            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+            padding: 16px 32px;
+            height: 56px;
+            min-width: 169px;
             transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
         }
-    
+        
+        .main-button {
+            margin: 0 auto;
+            display: block;
+            margin-top: 43px;
+        }
+        
         .main-button:hover,
         .main-button:focus {
             background-color: #404BBF;
         }
+}   
+        
+        
+        /* advantages */
+        
+
+.icon-container {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 112px;
+    background-color: #f4f4fd;
+    border-radius: 4px;
+    border: 1px solid #8e8f99;
+    margin-bottom: 8px;
 }
 
-@media (min-width: 1158px) {
-        @media screen and (-webkit-min-device-pixel-ratio: 2),
-        (min-resolution: 2dppx),
-        (min-resolution: 192dpi) {
-            .section-title {
-                background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office-dusctop-2x.jpg);
-            }
-        }
-    }
-
-
-
-/* advantages */
-
-.features {
-    padding: 120px 0;
+ .features {
+            
+    padding: 96px 0;
+    color: #fff;
 }
 
 .features-item {
-    width: calc((100% - 72px) / 4);
+    width: 100%;
 }
 
 .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
-.icon-container {
-        display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 112px;
-            background-color: #f4f4fd;
-            border-radius: 4px;
-            border: 1px solid #8e8f99;
-            margin-bottom: 8px;
-}
+
 
 .icon-advantages {
         position: absolute;
@@ -424,22 +604,21 @@ width: 100%;
 }
 
 .features-container {
-    display: flex;
-    gap: 24px;
-    max-width: 1128px;
-    width: 100%;
-    flex-shrink: 0;
-}
+    flex-direction: column;
+    gap: 72px;
+    }
 
 .advantages-title {
     color: #2e2f42;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.2;
+    font-size: 36px;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 700;
+    line-height: 1.11;
     letter-spacing: 0.02em;
     margin-bottom: 8px;
 }
+
 
 .advantages-text {
     color: #434455;
@@ -447,7 +626,26 @@ width: 100%;
     font-weight: 400;
     line-height: 1.5;
     letter-spacing: 0.02em;
+    margin-bottom: 72px;
 }
+
+@media (min-wight:768) {
+.features-item {
+    flex-direction: row;
+    gap:24;
+    row-gap: 72px;
+    /*flex-wrap: wrap;*/
+    }
+
+.features-container{
+    width: calc((100%-24px)/2);
+}
+
+.advantages-title .advantages-text{
+    text-align: left;
+}
+}
+
 
 /* Our Team */
 

@@ -161,7 +161,7 @@ img {
     background-color: #fff;
     padding: 24px 24px 40px 16px;
     overflow: auto;
-    visibility: visible;/*hidden;*/
+    visibility: /*visible;*/hidden;
     pointer-events: 0;
    /* opacity: 0;*/
 }
@@ -483,10 +483,11 @@ background-image: linear-gradient(rgba(46,47,66,0.7),rgba(46,47,66,0.7)),url(../
     color: #2e2f42;
     font-size: 36px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 1.11;
     letter-spacing: 0.02em;
-    padding-top: 8px;
+    margin-bottom: 8px;
+    text-align: center;
 }
 
 .advantages-text {
@@ -709,7 +710,6 @@ background-image: linear-gradient(rgba(46,47,66,0.7),rgba(46,47,66,0.7)),url(../
     font-weight: 400;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    margin-left: 16px;
 }
 
 /*footer*/
@@ -1172,7 +1172,6 @@ background-image: linear-gradient(rgba(46,47,66,0.7),rgba(46,47,66,0.7)),url(../
 
 .main-logo {
     max-width: 496px;
-    padding-bottom: 36px;
     font-size: 56px;
     margin-bottom: 36px;
 }
@@ -1238,6 +1237,7 @@ width: 264px;
 display: flex;
 align-items: baseline;
 gap: 72px 24px;
+min-width:564;
 }
 
 .footer-first {
@@ -1355,6 +1355,10 @@ display: flex;
     display: flex;
     gap: 24px;
     justify-content: center;
+}
+
+.section-list {
+    flex-basis: calc((100% - 72px) / 4);
 }
 
 /* PORTFOLIO */
